@@ -3,3 +3,92 @@
   padding: 0;
   margin: 0;
 }
+html{
+  font-size: 62.5%;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  padding:8.8rem 38rem;
+  
+}
+
+/* GENERAL CODE  */
+.primary-header {
+ font-size: 5.4rem; 
+ margin-bottom: 6.4rem;
+}
+.leaderboard-container {
+  display: flex;
+  gap: 12.8rem;
+}
+/* SCORE TABLE  */
+.score-table-header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.secondry-header {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.refresh-btn,
+.submit-btn {
+  background: none;
+  font-size: 1.8rem;
+  padding: 0 1.4rem;
+  height: 3.2rem;
+  border: .3rem solid;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.refresh-btn:hover,
+.submit-btn:hover {
+
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
+}
+
+.scores {
+  font-size: 2rem;
+  list-style: none;
+  border: 1px solid #333;
+  width: 40rem;
+  border: .3rem solid;
+  border-radius: .5rem;
+}
+.scores li {
+  padding: 1.2rem 1.4rem;
+
+}
+.scores li:nth-child(even) {
+  background-color: #ced4da;
+}
+.scores li:last-child {
+  margin-bottom: 0;
+}
+/* ADD SCORE  */
+.submit-form {
+  margin-top: 8.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  align-items: flex-end;
+}
+.name,
+.score {
+  width: 40rem;
+  height: 4.8rem;
+  padding-left: 1.2rem; 
+  border: .3rem solid;
+  border-radius: .5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+
+}
+.name::placeholder,
+.score::placeholder {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
