@@ -4,24 +4,23 @@
   margin: 0;
 }
 html{
-  font-size: 62.5%;
+  font-size: 60%;
 }
 body {
   font-family: sans-serif;
 }
 .container {
-  padding:8.8rem 38rem;
-  
+  padding:8.8rem 25rem;
 }
 
 /* GENERAL CODE  */
 .primary-header {
- font-size: 5.4rem; 
+ font-size: 54px; 
  margin-bottom: 6.4rem;
 }
 .leaderboard-container {
   display: flex;
-  gap: 12.8rem;
+  gap:12.8rem;
 }
 /* SCORE TABLE  */
 .score-table-header {
@@ -70,7 +69,7 @@ body {
 }
 /* ADD SCORE  */
 .submit-form {
-  margin-top: 8.8rem;
+  margin-top: 5.4rem;
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
