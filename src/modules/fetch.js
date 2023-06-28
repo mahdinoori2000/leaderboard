@@ -42,7 +42,7 @@ export default class Game {
     }
   }
 
-  getData = async () => {
+  static getData = async () => {
     try {
       const data = await fetch(baseUrl + gameEndpoint + apiId + scores, {
         method: 'GET',
@@ -56,7 +56,23 @@ export default class Game {
       return err;
     }
   }
-  // displayScore = async () => {
 
-  // }
+  static displayScores = () => {
+    const list = document.querySelector('.scores');
+    Game.getData()
+      .then((data) => {
+        let result = '';
+        const scores = data.result;
+        scores.forEach((score) => {
+          result += `
+            <li>${score.user}:${score.score}</li>
+          `;
+        });
+        list.innerHTML = result;
+        return result;
+      })
+      .catch((err) => {
+        console.error(`Error: ${err}`);
+      });
+  }
 }

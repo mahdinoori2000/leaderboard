@@ -1,7 +1,7 @@
 import './style.css';
-import addScore from './modules/addScores.js';
+// import addScore from './modules/addScores.js';
 import Game from './modules/fetch.js';
 
-addScore();
-
-console.log(Game.getData());
+document.addEventListener('DOMContentLoaded', () => {
+  Game.displayScores();
+});
