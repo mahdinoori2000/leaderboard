@@ -2,39 +2,43 @@ const apiId = 'oZhgduoPGExAgezAht0m';
 const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameEndpoint = 'games/';
 const scores = '/scores/';
-const gameName = {name: 'PUBG'};
+const gameName = { name: 'PUBG' };
+const nameInput = document.querySelector('.name').value;
+const scoreInput = document.querySelector('.score').value;
 const userInput = {
-  name: 
-  score: 
-}
+  name: nameInput,
+  score: scoreInput,
+};
 export default class Game {
-
   createGame = async () => {
     try {
       const data = await fetch(baseUrl + gameEndpoint, {
         method: 'POST',
         headers: {
-          'content-type': 'application/json'
+          'content-type': 'application/json',
         },
-        body: JSON.stringify(gameName)
+        body: JSON.stringify(gameName),
       });
-      const receive = await data.json()
-      console.log(receive);
+      const receive = await data.json();
+      return receive;
     } catch (err) {
       throw new Error(err);
     }
   };
 
   createScore = async () => {
-   try{ 
-    const data = await fetch(baseUrl + gameEndpoint + apiId +scores, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: json.stringify(scores)
-    })
-   }
+    try {
+      const data = await fetch(baseUrl + gameEndpoint + apiId + scores, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(userInput),
+      });
+      const receive = await data.json();
+      return receive;
+    } catch (err) {
+      return `something went wrong, ${err}`;
+    }
   }
 }
-
