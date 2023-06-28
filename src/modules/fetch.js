@@ -41,4 +41,22 @@ export default class Game {
       return `something went wrong, ${err}`;
     }
   }
+
+  getData = async () => {
+    try {
+      const data = await fetch(baseUrl + gameEndpoint + apiId + scores, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      });
+      const receiveData = await data.json();
+      return receiveData;
+    } catch (err) {
+      return err;
+    }
+  }
+  // displayScore = async () => {
+
+  // }
 }

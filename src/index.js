@@ -3,4 +3,5 @@ import addScore from './modules/addScores.js';
 import Game from './modules/fetch.js';
 
 addScore();
-Game.createGame();
+
+console.log(Game.getData());
