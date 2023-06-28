@@ -1,13 +1,16 @@
-const apiId = 'oZhgduoPGExAgezAht0m';
 const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameEndpoint = 'games/';
-const scores = '/scores/';
-const gameName = { name: 'PUBG' };
-const nameInput = document.querySelector('.name').value;
-const scoreInput = document.querySelector('.score').value;
+const id = 'oZhgduoPGExAgezAht0m/';
+const scores = 'scores/';
+const nameInput = document.querySelector('.name');
+const scoreInput = document.querySelector('.score');
+const gameName = {
+  name: 'PUBG',
+};
+
 const userInput = {
-  name: nameInput,
-  score: scoreInput,
+  name: String,
+  score: Number,
 };
 export default class Game {
   createGame = async () => {
@@ -26,25 +29,27 @@ export default class Game {
     }
   };
 
-  createScore = async () => {
+  static createScore = async () => {
+    userInput.name = nameInput.value;
+    userInput.score = scoreInput.value;
     try {
-      const data = await fetch(baseUrl + gameEndpoint + apiId + scores, {
+      const response = await fetch(baseUrl + gameEndpoint + id + scores, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
         },
         body: JSON.stringify(userInput),
       });
-      const receive = await data.json();
-      return receive;
-    } catch (err) {
-      return `something went wrong, ${err}`;
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return error;
     }
   }
 
   static getData = async () => {
     try {
-      const data = await fetch(baseUrl + gameEndpoint + apiId + scores, {
+      const data = await fetch(baseUrl + gameEndpoint + id + scores, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
@@ -71,8 +76,11 @@ export default class Game {
         list.innerHTML = result;
         return result;
       })
-      .catch((err) => {
-        console.error(`Error: ${err}`);
-      });
+      .catch((err) => err);
+  }
+
+  static emptyForm = () => {
+    nameInput.value = '';
+    scoreInput.value = '';
   }
 }
