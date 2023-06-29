@@ -30,22 +30,23 @@ export default class Game {
   };
 
   static createScore = async () => {
-    userInput.name = nameInput.value;
-    userInput.score = scoreInput.value;
-    try {
-      const response = await fetch(baseUrl + gameEndpoint + id + scores, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(userInput),
-      });
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      return error;
+    const userName = nameInput.value;
+    const userScore = parseInt(scoreInput.value, 10);
+
+    if (userName && userScore) {
+      try {
+        await fetch(baseUrl + gameEndpoint + id + scores, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user: userName, score:userScore }),
+        });
+      } catch (err) {
+        throw new Error('Failed to submit score');
+      }
     }
-  }
+  };
 
   static getData = async () => {
     try {

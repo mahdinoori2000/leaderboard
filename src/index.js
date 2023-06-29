@@ -1,8 +1,7 @@
 import './style.css';
-// import addScore from './modules/addScores.js';
 import Game from './modules/fetch.js';
 
-const form = document.querySelector('form');
+const form = document.querySelector('.submit-form');
 const displayData = () => {
   Game.displayScores();
 };
