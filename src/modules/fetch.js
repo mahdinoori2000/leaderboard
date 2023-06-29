@@ -8,10 +8,6 @@ const gameName = {
   name: 'PUBG',
 };
 
-const userInput = {
-  name: String,
-  score: Number,
-};
 export default class Game {
   createGame = async () => {
     try {
@@ -40,7 +36,7 @@ export default class Game {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ user: userName, score:userScore }),
+          body: JSON.stringify({ user: userName, score: userScore }),
         });
       } catch (err) {
         throw new Error('Failed to submit score');
