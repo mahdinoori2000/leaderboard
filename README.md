@@ -139,30 +139,6 @@ You can deploy this project using: GitHub Pages,
 
 
 ## Author : Mahdi Noori
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [:green_book: Table of Contents](#green_book-table-of-contents)
-- [Leaderboard Project ](#leaderboard-project-a-nameleaderboard-projecta)
-  - [🛠 Built With ](#-built-with-a-namebuilt-witha)
-    - [Tech Stack ](#tech-stack-a-nametech-stacka)
-    - [Key Features ](#key-features-a-namekey-featuresa)
-  - [Getting Started ](#getting-started-a-namegetting-starteda)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-    - [Deployment ](#deployment-a-namedeploymenta)
-  - [Author : Mahdi Noori](#author--mahdi-noori)
-  - [Future Features ](#future-features-a-namefuture-featuresa)
-  - [Contributing ](#contributing-a-namecontributinga)
-  - [Show your support ](#show-your-support-a-namesupporta)
-  - [Acknowledgments ](#acknowledgments-a-nameacknowledgementsa)
-  - [License ](#license-a-namelicensea)
-
-<!-- /code_chunk_output -->
 <a name="Mahdi Noori"></a>
 
 - GitHub: [@mahdinoori2000](https://github.com/mahdinoori2000)
